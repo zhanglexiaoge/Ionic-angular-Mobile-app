@@ -1,0 +1,15 @@
+{
+  "name": "ZLmyAPP",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+
+  "tets":"bioazhu:此文件设置代理只是本地测试使用 解决浏览器跨域问题  ",
+  "proxies": [{
+   
+    "path": "/InteractionBulletScreenPro",
+    "proxyUrl": "http://192.168.1.105:8181/InteractionBulletScreenPro"
+  }]
+}

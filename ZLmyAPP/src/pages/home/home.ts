@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { NavController,Slides  } from 'ionic-angular';
 
-import {LoginPage } from '../login/login';
+// import {LoginPage } from '../login/login';
+import {MoviesDetailPage } from '../movies-detail/movies-detail';
 
 import {HttpRequestService} from '../../service/httpRequest';
+
 
 @Component({
   selector: 'page-home',
@@ -11,44 +13,93 @@ import {HttpRequestService} from '../../service/httpRequest';
 })
 export class HomePage {
 
+  @ViewChild(Slides) slides: Slides;
 
-  private api_sku_save = 'https://api.douban.com/v2/movie/in_theaters';
+//   private api_sku_save = 'https://api.douban.com/v2/movie/in_theaters';
+
+public BannerArr =[];
   
- public testurl = 'http://192.168.1.105:8181/InteractionBulletScreenPro/mobile/testInterface.shtml';
-  public loact = 'http://localhost:8100';
-
-  // public loact = 'http://192.168.0.136:8100';
-  
-  
-  // constructor(public navCtrl: NavController,private httpRequestService:HttpRequestService ) {
-
-  // }
-
   constructor(public navCtrl: NavController ,private httpRequestService : HttpRequestService) {
-
-  }
-
-  ionViewDidEnter() {
-
     console.log("正在加载，请求中");
-   // this.httpRequestService.httpGet(this.loact +  '/InteractionBulletScreenPro/mobile/testInterface.shtml',this,"movies");
 
-   
+    var that = this;
+this.httpRequestService.get('/v2/movie/in_theaters',null,function successCallback(res, msg){
+console.log(res.count);
+//获取数据成功 要展示出来 
+var arrayone = res.subjects;
+console.log(arrayone);
+arrayone.forEach(element => {
+  //console.log(element.images.small);
 
-    this.httpRequestService.httpGet('http://192.168.1.105:8181/InteractionBulletScreenPro/mobile/testInterface.shtml',this,"movies");
+  
+ 
+  var strName = "";
+  element.casts.forEach(item => {
+    strName = strName + item.name  + " ";
+  });
+
+  
+  element.strName = "主演:"+strName;
+  console.log(element.strName);
+ 
+
+
+  that.BannerArr.push(element);
+});
+console.log(that.BannerArr);
+
+
+}, function errorCallback(err){
+ console.log(err);
+}
+)
+
+
   }
 
+ 
+  ionViewDidEnter() {
+//     console.log("正在加载，请求中");
 
-  getOk (val, flag){
-    console.log(val);
-  }
-  getErr (val, flag){
-   
-    console.log(val);
-  }
+//     var that = this;
+// this.httpRequestService.get('/v2/movie/in_theaters',null,function successCallback(res, msg){
+// console.log(res.count);
+// //获取数据成功 要展示出来 
+// var arrayone = res.subjects;
+// console.log(arrayone);
+// arrayone.forEach(element => {
+//   //console.log(element.images.small);
 
-  navTologin(){
-   this.navCtrl.push(LoginPage);
+  
+ 
+//   var strName = "";
+//   element.casts.forEach(item => {
+//     strName = strName + item.name  + " ";
+//   });
+
+  
+//   element.strName = "主演:"+strName;
+//   console.log(element.strName);
+ 
+
+
+//   that.BannerArr.push(element);
+// });
+// console.log(that.BannerArr);
+
+
+// }, function errorCallback(err){
+//  console.log(err);
+// }
+// )
+
+}
+
+
+  navTologin(id){
+   this.navCtrl.push(MoviesDetailPage, {
+    id : id
+});
 
   }
 

@@ -4,16 +4,38 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-  <button ion-button color="secondary" (click)= "navTologin()">跳转</button>
+
+<!-- <ion-content padding>
+  {{"66666666"}}
+  </ion-content> -->
+<ion-content  padding id ="home">
+  <ion-slides #slides *ngIf="BannerArr.length>0" class="banner" pager  loop="true" autoplay="9999">    
+    <ion-slide *ngFor="let item of BannerArr">
+        <img [src]="item.images.medium" />
+    </ion-slide>         
+ </ion-slides>
+
+
+
+<div class="list">
+<ul  *ngFor="let item of BannerArr" class="movieslist">
+   
+    <li (click)= "navTologin(item.id)">
+        <img src="{{item.images.medium}}"/>
+
+       <div class="bigrignht">
+         <div class="ti"> {{item.title}} </div>
+         <div class="ti1"> {{ "简介:"+item.title}} </div>
+         <div class="ti2"> {{ item.strName}} </div>
+       </div>
+    </li>
+
+</ul>
+
+</div>
+
+
+
+
 
 </ion-content>

@@ -1,3 +1,99 @@
 page-home {
 
+    
+   
+     ion-slides {
+       
+        padding: 0;
+        height: 30%;
+        width: 100%;
+        background-color: yellow;
+     }
+
+    ion-slide {
+       
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: beige;
+    }
+    
+     .img{   
+     padding: 20; 
+     background-color: black;
+    }
+
+    #home {
+        background-color:#f1f1f1;
+    }
+    #home .list {
+     margin: 0px;
+     width: 100%;
+     height: 60px;
+    // background-color: blue;
+    }
+    #home .movieslist{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+       
+    }
+    #home .movieslist li {
+        margin: 0;
+        padding: 0;
+       
+        width: 100%;
+        height: 60px;
+       // background-color: red;
+        list-style-type:none;
+        display: flex;//felx 布局
+        margin-top: 10px;
+       
+
+    }   
+#home .movieslist li img {
+ margin: 0;
+ margin-left: 10px;
+ width: 60px;
+ height: 60px;
 }
+
+#home .movieslist li .bigrignht{
+    flex:1;/*这里设置为占比1，填充满剩余空间*/ 
+
+    background-color: yellow;
+}
+#home .movieslist li .ti {
+ 
+
+
+margin-left: 10px;
+background-color: beige;
+text-align: left;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 1;
+overflow: hidden;
+
+
+}
+#home .movieslist li .ti1 {
+    
+
+   font-size:  10px; 
+//    height: 20px;
+   margin-left: 10px;
+   background-color: blueviolet;
+}
+#home .movieslist li .ti2 {
+   
+   font-size:  10px; 
+//    height: 20px;
+   margin-left: 10px;
+   background-color: yellow;
+}
+
+
+}
+

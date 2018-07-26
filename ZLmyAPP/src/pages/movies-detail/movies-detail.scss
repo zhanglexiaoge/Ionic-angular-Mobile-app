@@ -1,0 +1,76 @@
+page-movies-detail {
+    #moviesdetail{
+        padding: 0px;
+       margin: 0px;
+    }
+
+
+#moviesdetail .moviesdata {
+    background-color: #333333;
+    height: 50%;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+
+}
+#moviesdetail .moviesdata img {
+    left: 20%;
+    right: 20%;
+    top:8%;
+    bottom: 5%;
+     width: 60%;
+    height:37%;
+    // width: 100px;
+    // height: 100px;
+      
+                 /*設置绝对定位*/
+                 position: absolute;
+
+}
+#moviesdetail .moviescont{
+    margin: 0;
+    padding: 0;
+   
+    width: 100%;
+    height: 20%;
+    background-color:#f1f1f1;
+    list-style-type:none;
+    display: flex;//felx 布局
+   // margin-top: 10px;  
+}
+
+#moviesdetail .leftconvent {
+
+    margin: 0;
+    margin-left: 10px;
+    width: 70%;
+    height: 100%;
+    // background: #f1f1f1;
+}
+#moviesdetail .rightconvent {
+    margin: 0;
+    margin-right: 10px;
+    width: 30%;
+    height: 100%; 
+    // background: yellowgreen;
+}
+#moviesdetail .leftconvent  .title{
+     font-size: 18px;
+}
+#moviesdetail .leftconvent  .title1{
+    font-size: 10px;
+    margin-top: 5px;
+}
+#moviesdetail .rightconvent .bigview {
+
+    background: #ffffff;
+    width: 100%;
+    margin-top:16%;
+    margin-bottom: 15%;
+    height: 70%;
+    //  /*設置绝对定位 相对父视图*/
+    //  position: absolute;
+
+}
+
+}

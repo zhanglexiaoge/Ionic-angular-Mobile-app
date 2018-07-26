@@ -14,6 +14,7 @@ import { MyApp } from './app.component';
 //引入组件
  import {ComponentsModule } from '../components/components.module';
  import { LoginPage } from '../pages/login/login';
+ import { MoviesDetailPage } from '../pages/movies-detail/movies-detail';
 //所有的页面和组件，自定义的组件 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -33,6 +34,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     LoginPage,
+    MoviesDetailPage,
     TabsPage
   ],
   imports: [/* 引入的模块 依赖的模块*/
@@ -41,7 +43,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HttpClientModule,
 /* 注册这个模块*/
      ComponentsModule,
-    IonicModule.forRoot(MyApp)
+    // IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      tabsHideOnSubPages: 'true', //隐藏全部子页面 tabs
+      backButtonText: '返回' /*配置返回按钮*/
+      })
+
   ],
   bootstrap: [IonicApp], /* 启动的模块 */
   entryComponents: [ /* 配置不会在模版使用的组件 */
@@ -50,6 +57,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     LoginPage,
+    MoviesDetailPage,
     TabsPage
   ],
   providers: [/*配置服务 */

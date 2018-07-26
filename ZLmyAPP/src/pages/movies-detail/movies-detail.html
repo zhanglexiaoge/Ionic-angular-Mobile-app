@@ -1,0 +1,44 @@
+<!--
+  Generated template for the MoviesDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>moviesDetail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id ="moviesdetail">
+
+  <div  *ngFor="let item of dataBannerArr" class="moviesdata"> 
+
+    <img src="{{item.images.medium}}"/>
+
+  </div>
+  <div class="moviescont">
+  <div *ngFor="let item of dataBannerArr" class="leftconvent">
+  <div class="title"> {{item.title}} </div>
+  <div class="title1"> {{item.year+" " + "/" + item.leixing }} </div>
+  <div class="title1"> {{"原名: "+item.original_title}} </div>
+  <div class="title1"> {{"上映时间: "+ "("  +item.guojia +")"}} </div>
+  </div>
+
+  <div class="rightconvent">
+   
+    <div *ngFor="let item of dataBannerArr" class="bigview">
+     <div> 豆瓣评分</div>
+     <div> {{item.rating.average}}</div>
+     <div> {{item.ratings_count + "人"}}</div>
+    </div>
+
+
+  </div>
+
+  </div>
+
+</ion-content>
